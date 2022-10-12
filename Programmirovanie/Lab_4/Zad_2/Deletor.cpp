@@ -14,18 +14,22 @@ class Weapon{
       this->damage = damage;
       this->weight = weight;
     };
+
     Weapon(){
       this->name = "Sword";
       this->damage = 25;
       this->weight = 7;
     };
 
-    void showstats(){
-      cout << endl << "Name: " << name << endl << "DMG: " << damage << endl << "Weight: " << weight << endl << endl;
+    ~Weapon(){
+      cout << name << " is deleted" << endl;
     }
+
+    void showstats(){
+      cout << "Name: " << name << endl << "DMG: " << damage << endl << "Weight: " << weight << endl << endl;
+    }
+
 };
-
-
 
 int main(){
   Weapon W1("Bow",15,4);

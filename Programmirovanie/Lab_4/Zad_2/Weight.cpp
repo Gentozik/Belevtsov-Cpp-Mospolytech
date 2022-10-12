@@ -25,15 +25,25 @@ class Weapon{
       cout << endl << "Name: " << name << endl << "DMG: " << damage << endl << "Weight: " << weight << endl << endl;
     }
 
-    void Wcheck(){
+    bool Wcheck(){
       int Wmax;
       cout << "Max weight?: ";
       cin >> Wmax;
       if (Wmax >= weight){
         cout << "Can carry" << endl;
+        return true;
       } else {
         cout << "Can`t carry" << endl;
+        return false;
       }
+    }
+
+    int summ1(int _weight) {
+        return _weight + weight;
+    }
+
+    int Wsum(Weapon& W){
+      return summ1(W.weight);
     }
 };
 
@@ -45,4 +55,6 @@ int main(){
   Weapon W2 = Weapon();
   W2.showstats();
   W2.Wcheck();
+
+  std::cout << W1.Wsum(W2) << std::endl;
 }
