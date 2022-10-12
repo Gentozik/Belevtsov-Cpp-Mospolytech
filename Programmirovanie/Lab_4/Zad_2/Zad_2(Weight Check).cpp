@@ -17,28 +17,28 @@ class Weapon{
 
     Weapon(){
       this->name = "Sword";
-      this->damage = 25;
-      this->weight = 7;
+      this->damage = 40;
+      this->weight = 10;
     };
 
     void showstats(){
-      cout << "Name: " << name << endl << "DMG: " << damage << endl << "Weight: " << weight << endl << endl;
+      cout << endl << "Name: " << name << endl << "DMG: " << damage << endl << "Weight: " << weight << endl << endl;
     }
 
     void Wcheck(){
       int Wmax;
-      cout << "Max weight? :";
+      cout << "Max weight?: ";
       cin >> Wmax;
-      if (Wmax <= weight){
-        cout << "Can carry";
+      if (Wmax >= weight){
+        cout << "Can carry" << endl;
       } else {
-        cout << "Can`t carry";
+        cout << "Can`t carry" << endl;
       }
     }
 };
 
 int main(){
-  Weapon W1("Bow",15,4);
+  Weapon W1("Bow",25,5);
   W1.showstats();
   W1.Wcheck();
 
