@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 class Weapon{
-  private:
+  protected:
     string name;
     int damage;
     int weight;
