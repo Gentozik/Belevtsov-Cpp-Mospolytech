@@ -54,4 +54,7 @@ class Weapon{
       cout << "Weight: " << getWeight() << endl;
       cout << "Type: " << getType() << endl;
     }
+    bool operator > (Weapon& W);
+    bool operator == (Weapon& W);
+    bool operator < (Weapon& W);
 };

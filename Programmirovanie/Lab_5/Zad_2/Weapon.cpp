@@ -6,14 +6,18 @@ struct Player {
     string name;
     string password;
 };
-void DmgComparsiom(Weapon Wep1, Weapon Wep2){
-  if (Wep1.getDamage() > Wep2.getDamage()){
-    cout << endl << Wep1.getName() << " is more powerful than " << Wep2.getName() << " " << Wep1.getDamage() << " " << Wep2.getDamage() << endl;
-  } else if (Wep1.getDamage() < Wep2.getDamage()){
-    cout << endl << Wep2.getName() << " is more powerful than " << Wep1.getName() << " " << Wep2.getDamage() << " " << Wep1.getDamage() << endl;
-  } else cout << "Both are powerful equally"<< endl;
+
+bool Weapon::operator > (Weapon& W){
+  return this->getDamage() > W.getDamage();
 }
 
+bool Weapon::operator == (Weapon& W){
+  return this->getDamage() == W.getDamage();
+}
+
+bool Weapon::operator < (Weapon& W){
+  return this->getDamage() < W.getDamage();
+}
 
 int main()
 {
@@ -33,7 +37,7 @@ int main()
   W1.getType();
   W1.showStats();
 
-  MagicWeapon W2("Book of Flames", 2, 2, "Twohanded", 3);
+  MagicWeapon W2("Book of Flames", 4, 2, "Twohanded", 3);
   W2.getName();
   W2.getDamage();
   W2.getWeight();
@@ -47,7 +51,14 @@ int main()
   W3.getType();
   W3.showStats();
 
-  DmgComparsiom(W1,W2);
-  DmgComparsiom(W2,W3);
-  DmgComparsiom(W3,W1);
+  cout << endl;
+  cout << (W1 > W2) << endl;
+  cout << (W1 < W2) << endl;
+  cout << (W1 == W2) << endl;
+  cout << (W2 > W3) << endl;
+  cout << (W2 < W3) << endl;
+  cout << (W2 == W3) << endl;
+  cout << (W3 > W1) << endl;
+  cout << (W3 < W1) << endl;
+  cout << (W3 == W1) << endl;
 }

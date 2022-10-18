@@ -32,6 +32,4 @@ class MagicWeapon : public Weapon
       cout << "Weight: " << getWeight() << endl;
       cout << "Type: " << getType() << endl;
     }
-
-    friend void DmgComparsiom(Weapon Wep1, Weapon Wep2);
 };
