@@ -56,11 +56,6 @@ int main(){
   W2.showstats();
   W2.Wcheck();
 
-  Weapon *W3 = new Weapon;
-  W3->showstats();
-  W3->Wcheck();
-  delete W3;
-
   cout << endl;
   cout << "Weapon weight sum: " << W1.Wsum(W2) << endl;
 }
