@@ -37,4 +37,8 @@ int main(){
 
   Weapon W2 = Weapon();
   W2.showstats();
+
+  Weapon *W3 = new Weapon;
+  W3->showstats();
+  delete W3;
 }
