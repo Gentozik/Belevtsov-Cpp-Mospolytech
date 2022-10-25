@@ -2,10 +2,10 @@
 
 int main(){
   try {
-    Player p(96);
-    std::cout << "Health: " << p.getHealth();
+    Year y(-34);
+    std::cout << "Thank you!";
   }
-  catch (PlayerException err) {
-    std::cout << "PlayerException: " << err.what();
+  catch (YearException err) {
+    std::cout << "Wrong: " << err.what();
   }
 }

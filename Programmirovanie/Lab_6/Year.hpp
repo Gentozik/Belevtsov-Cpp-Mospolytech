@@ -1,37 +1,37 @@
 #include <iostream>
 
-enum PlayerCode {
+enum YearCode {
 	NEGATIVE,
-	BIG,
-	ZERO
+	OLD,
+	YOUNG
 };
 
-class PlayerException: public std::exception {
-	PlayerCode code;
+class YearException: public std::exception {
+	YearCode code;
 public:
-	PlayerException(PlayerCode code) : code(code) {}
+	YearException(YearCode code) : code(code) {}
 	const char* what() const throw() {
-		if (code == PlayerCode::NEGATIVE) return "Health < 0";
-		else if (code == PlayerCode::BIG) return "Health >100";
-		else if (code == PlayerCode::ZERO) return "Health = 0";
+		if (code == YearCode::NEGATIVE) return "Negative number!";
+		else if (code == YearCode::OLD) return "People don`t live that long!";
+		else if (code == YearCode::YOUNG) return "You haven`t born!";
 	}
 };
 
-class Player {
+class Year {
 	int health;
 public:
-	Player(int health) : health(health) {
-		if (health < 0) throw PlayerException(PlayerCode::NEGATIVE);
-		else if (health > 100) throw PlayerException(PlayerCode::BIG);
-		else if (health == 0) throw PlayerException(PlayerCode::ZERO);
+	Year(int health) : health(health) {
+		if (health < 0) throw YearException(YearCode::NEGATIVE);
+		else if (health < 1850 ) throw YearException(YearCode::OLD);
+		else if (health > 2022 ) throw YearException(YearCode::YOUNG);
 	}
 	int getHealth() {
 		return this->health;
 	}
 	void setHealth(int health) {
-		if (health < 0) throw PlayerException(PlayerCode::NEGATIVE);
-		else if (health > 100) throw PlayerException(PlayerCode::BIG);
-		else if (health == 0) throw PlayerException(PlayerCode::ZERO);
+		if (health < 0) throw YearException(YearCode::NEGATIVE);
+		else if (health < 1850 ) throw YearException(YearCode::OLD);
+		else if (health > 2022 ) throw YearException(YearCode::YOUNG);
 		this->health = health;
 	}
 };
