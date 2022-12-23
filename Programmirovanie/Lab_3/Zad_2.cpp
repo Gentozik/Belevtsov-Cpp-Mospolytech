@@ -6,7 +6,10 @@ using std::endl;
 const int size = 10;
 int mas[size];
 int sum = 0;
+
+
 void summa();
+int *str, *end;
 
 void ch();
 int a;
@@ -31,7 +34,6 @@ int main(){
 }
 
 void summa(){
-  int *str, *end;
   for(str = &mas[0], end = &mas[size-1];
     str < end; ++str, --end)
     sum += *str + *end;
